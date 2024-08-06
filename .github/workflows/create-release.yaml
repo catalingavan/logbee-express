@@ -18,8 +18,9 @@ jobs:
       - name: Install dependencies
         run: npm i
 
-      - name: Build the application
+      - name: Build and pack the module
         run: |
           npm run build
+          npm pack --pack-destination .
 
       
