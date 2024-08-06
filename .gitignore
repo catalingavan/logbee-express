@@ -1,0 +1,12 @@
+/**/node_modules
+
+/**/dist
+
+# Typescript v1 declaration files
+typings/
+
+# Optional npm cache directory
+.npm
+
+# local test
+event.json
