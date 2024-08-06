@@ -24,13 +24,13 @@ jobs:
       
       - name: Publish to npm
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN_LOGBEE_WORKFLOW }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN_LOGBEE_WORKFLOW }}
         run: |
           npm publish
 
       - name: Publish to GitHub Packages
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GH_PAT_LOGBEE_RELEASE }}
+          NPM_TOKEN: ${{ secrets.GH_PAT_LOGBEE_RELEASE }}
         run: npm publish --registry=https://npm.pkg.github.com/
 
       
