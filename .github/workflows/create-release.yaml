@@ -32,11 +32,11 @@ jobs:
       - name: Create package file
         run: npm pack
 
-      - name: Publish to npm
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN_LOGBEE_WORKFLOW }}
-        run: |
-          npm publish --access public
+      # - name: Publish to npm
+      #   env:
+      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN_LOGBEE_WORKFLOW }}
+      #   run: |
+      #     npm publish --access public
 
       - name: Publish to GitHub Packages
         env:
