@@ -40,7 +40,7 @@ jobs:
           package_file="package.json"
           tmp=$(mktemp)
 
-          jq '.name = "@catalingavan/express"' "$package_file" > "$tmp" && mv "$tmp" "$package_file"
+          jq '.name = "@catalingavan/logbee-express"' "$package_file" > "$tmp" && mv "$tmp" "$package_file"
           cat "$package_file"
 
       - name: Set up Node.js
