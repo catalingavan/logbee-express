@@ -30,7 +30,7 @@ const app = express();
 app.use(logbee.middleware({
     organizationId: '_OrganizationId_',
     applicationId: '_ApplicationId_',
-    logbeeApiUri: 'https://api.logbee.net' // or your on-prem logbee endpoint
+    logbeeApiUri: 'https://api.logbee.net' // or the on-premises logbee endpoint
 }));
 
 app.get("/", (req, res) => {
