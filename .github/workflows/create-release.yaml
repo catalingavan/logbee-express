@@ -10,6 +10,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Get version from package.json
+        id: version
+        run: |
+          version=$(cat package.json | jq -r '.version')
+          echo "VERSION=$version" >> $GITHUB_OUTPUT
+          echo $version
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -22,6 +29,9 @@ jobs:
         run: |
           npm run build
       
+      - name: Create package file
+        run: npm pack
+
       - name: Publish to npm
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN_LOGBEE_WORKFLOW }}
@@ -33,4 +43,11 @@ jobs:
           NPM_TOKEN: ${{ secrets.GH_PAT_LOGBEE_RELEASE }}
         run: npm publish --registry=https://npm.pkg.github.com/
 
-      
+      - name: Release
+        uses: softprops/action-gh-release@v2.0.4
+        with:
+          body: v${{ steps.version.outputs.VERSION }}
+          draft: false
+          tag_name: v${{ steps.version.outputs.VERSION }}
+          files: |
+            ./*.tgz
