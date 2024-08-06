@@ -36,12 +36,12 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN_LOGBEE_WORKFLOW }}
         run: |
-          npm publish
+          npm publish --access public
 
       - name: Publish to GitHub Packages
         env:
           NPM_TOKEN: ${{ secrets.GH_PAT_LOGBEE_RELEASE }}
-        run: npm publish --registry=https://npm.pkg.github.com/
+        run: npm publish --registry=https://npm.pkg.github.com/ --access public
 
       - name: Release
         uses: softprops/action-gh-release@v2.0.4
