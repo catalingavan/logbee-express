@@ -1,6 +1,6 @@
 {
   "name": "@logbee/express",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An ExpressJS middleware which saves the HTTP properties, exceptions and logs to logbee.net",
   "main": "dist/index.js",
   "scripts": {
