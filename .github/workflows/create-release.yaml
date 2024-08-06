@@ -42,7 +42,7 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.GH_PAT_LOGBEE_RELEASE }}
           NODE_AUTH_TOKEN: ${{ secrets.GH_PAT_LOGBEE_RELEASE }}
-        run: npm publish --registry=https://npm.pkg.github.com/ --access public
+        run: npm publish --scope=@catalingavan --registry=https://npm.pkg.github.com/ --access public
 
       - name: Release
         uses: softprops/action-gh-release@v2.0.4
