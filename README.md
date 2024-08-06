@@ -84,6 +84,10 @@ app.get("/", (req, res) => {
 
 `logbee.middleware` accepts the following configuration options:
 
+### `logbeeApiUri`
+
+The logbee endpoint where the logs will be saved. Default: `https://api.logbee.net`.
+
 ### `shouldLogRequestBody(req)`
 
 Determines if the `request.body` should be logged or not. Default: `true`.
@@ -129,7 +133,7 @@ app.use(logbee.middleware({
 ### User-interface
 
 <table><tr><td>
-    <img alt="User interface" src="https://github.com/user-attachments/assets/63ae0381-be6b-439f-a114-15c4d7278154" />
+    <img alt="User interface" src="https://github.com/user-attachments/assets/bcc526f0-878f-4ff6-ac78-5aac2435668f" />
 </td></tr></table>
 
 
