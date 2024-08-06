@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "declaration": true,
+        "target": "es2017",
+        "lib": [
+            "es2019",
+            "es2019.array"
+        ],
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "outDir": "dist",
+        "sourceMap": true,
+        "resolveJsonModule": true,
+        "typeRoots": [
+            "./node_modules/@types",
+            "./src/types"
+        ]
+    },
+    "ts-node": {
+        "files": true
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "include": [
+        "src/types/express.d.ts",
+        "src/**/*.ts"
+    ]
+}
