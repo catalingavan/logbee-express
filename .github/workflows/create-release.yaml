@@ -41,6 +41,7 @@ jobs:
       - name: Publish to GitHub Packages
         env:
           NPM_TOKEN: ${{ secrets.GH_PAT_LOGBEE_RELEASE }}
+          NODE_AUTH_TOKEN: ${{ secrets.GH_PAT_LOGBEE_RELEASE }}
         run: npm publish --registry=https://npm.pkg.github.com/ --access public
 
       - name: Release
